@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Assignment 06</title>
+ </head>
+<body>
+<h1>Author entry Jaswitha Kalikiri</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="author_name">The hidden author name </label>
+    <input type ="password" id="author_name" name="author_name" value="Dickens"> <br>
+
+    <label for="guess_author">Guess the author</label>
+    <input type ="text" id="guess_author" name="guess_author" autofocus> <br>
+
+    <input type="button" onclick="checkAuthor()" value="Check the guess">
+</form>
+
+
+<p Good Count: id="countOfGood">Good Count</p>
+<p Oops Count: id="countOfOops">Oops Count</p>
+
+<script> 
+var good=0
+var oops=0
+function checkAuthor (){
+    console.log("Getting form values")
+    author= document.getElementById("author_name").value
+    guess= document.getElementById("guess_author").value
+    if(author == guess){
+        good++;
+        alert("You got it right");
+    }
+    else{
+        oops++;
+        alert("Sorry");
+    }
+    document.getElementById("countOfGood").innerHTML=good;
+    document.getElementById("countOfOops").innerHTML=oops;
+}
+</script>
+
+</body>
+</html> 
