@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Its a cruise page</title>
+</head>
+
+<body>
+
+    <h2>goes on a cruise Jaswitha Kalikiri</h2>
+    <form>
+        <label for="first">Shares Cabin</label>
+        <input type="checkbox" id="first" value="True" checked> <br>
+        <label for="second">Breakfast</label>
+        <input type="checkbox" id="second" value="True" checked> <br>
+        <label for="third">Pool Pass</label>
+        <input type="checkbox" id="third" value="False"><br>
+        <input type="button" onclick="selectCruise()" value="Select a Cruise">
+    </form>
+
+    <div id="result"> </div>
+    <br>
+    <form>
+        <label for="noOfDays">Enter the number of days</label>
+        <input type="text" id="noOfDays" value="days">
+        <label for="price">Enter Price</label>
+        <input type="text" id="price">
+        <input type="button" onclick="UpdateCruise()" value="Update the Cruise">
+    </form>
+    <p id="final"></p>
+    <script>
+        var my_cruise = {};
+        function selectCruise() {
+            my_cruise = {};
+            var shared = document.getElementById("first").checked;
+            var breakfast = document.getElementById("second").checked;
+            var pool = document.getElementById("third").checked;
+            var result = document.getElementById("result");
+            my_cruise = "Share: " + shared + "; breakfast: " + breakfast + "; pool: " + pool;
+            result.innerHTML = my_cruise;
+
+        }
+
+        function UpdateCruise() {
+            const days = document.getElementById("noOfDays").value;
+            const price = document.getElementById("price").value;
+            // var final = document.getElementById("final");
+            my_cruise = selectCruise();
+
+            final.innerHTML = "days: " + days + "; price: " + price;
+        }
+    </script>
+</body>
+
+</html>
